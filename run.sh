@@ -1,6 +1,6 @@
 #!/bin/bash
 if [ -n `which flask` ]; then
-  FLASK_APP=app.py flask run -h 0.0.0.0
+  FLASK_APP=app.py flask run
 else
   echo "Please install Flask"
   return 1
