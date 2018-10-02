@@ -6,6 +6,7 @@ A quick and dirty Flask app to control a TP-Link Kasa smart bulb from a web inte
   
 -   Doesn't  KASA already have a mobile app and cloud site to do this with?
 	 Yes, but that's no fun and I wouldn't get to play with Flask
+
 	 This allows me to access it from any device without installing anything
 - Does it really need to be green text on a black background like a bad hacker movie?
 	Yes
