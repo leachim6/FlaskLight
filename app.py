@@ -3,9 +3,11 @@ from flask import Flask
 from flask import jsonify
 from flask import request
 from pyHS100 import SmartBulb
+
 bulb = SmartBulb("192.168.1.253")
 
 app = Flask(__name__)
+
 
 @app.route("/")
 def index():
@@ -98,22 +100,26 @@ def index():
 </html>
 '''
 
+
 @app.route("/lightOn")
 def lightOn():
     bulb.turn_on()
     return jsonify(state=bulb.state)
+
 
 @app.route("/lightOff")
 def lightOff():
     bulb.turn_off()
     return jsonify(state=bulb.state)
 
+
 @app.route("/lightState")
 def lightState():
-    return jsonify(state=bulb.state,brightness=bulb.brightness)
+    return jsonify(state=bulb.state, brightness=bulb.brightness)
+
 
 @app.route("/brightness")
 def lightSetBright():
-    brightness = request.args.get('brightness', default = 100, type = int)
+    brightness = request.args.get('brightness', default=100, type=int)
     bulb.brightness = brightness
     return jsonify(brightness=bulb.brightness)
